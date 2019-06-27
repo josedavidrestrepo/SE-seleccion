@@ -24,7 +24,6 @@ public class MotorController{
             
             motor.reset();
             motor.batch("clips/zoo-grafico.clp");
-            //motor.run();
         } catch (JessException ex) {
             Logger.getLogger(MotorController.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -43,7 +42,7 @@ public class MotorController{
     
     public void ejecutar(){
         try {
-            this.motor.run();
+            motor.run();
         } catch (JessException ex) {
             Logger.getLogger(MotorController.class.getName()).log(Level.SEVERE, null, ex);
         }
