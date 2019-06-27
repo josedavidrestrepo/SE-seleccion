@@ -10,16 +10,18 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import jess.JessException;
 
+import javax.swing.*;
+
 /**
  *
  * @author Alex
  */
-public class ZooView extends javax.swing.JFrame {
+public class MainView extends javax.swing.JFrame {
     private MotorController motorController;
     /**
-     * Creates new form ZooView
+     * Creates new form MainView
      */
-    public ZooView() {
+    public MainView() {
         initComponents();
         this.setVisible(true);
     }
@@ -172,7 +174,7 @@ public class ZooView extends javax.swing.JFrame {
             }
             //this.pack();
         } catch (JessException ex) {
-                Logger.getLogger(ZooView.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(MainView.class.getName()).log(Level.SEVERE, null, ex);
             }
     }//GEN-LAST:event_jbSiguienteMouseClicked
 
@@ -185,6 +187,10 @@ public class ZooView extends javax.swing.JFrame {
         jrbSi.setVisible(true);
         jbSiguiente.setText("Siguiente");
     }
+
+    public void cambiarAyuda(String ayuda) {
+        JOptionPane.showMessageDialog(null, ayuda);
+    }
     
     public void darRespuesta(String respuesta){
         jlPregunta.setText(respuesta);
@@ -192,7 +198,6 @@ public class ZooView extends javax.swing.JFrame {
         jrbSi.setVisible(false);
         jbSiguiente.setText("Otra vez");
     }
-    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup bgOpciones;
@@ -204,5 +209,7 @@ public class ZooView extends javax.swing.JFrame {
     private javax.swing.JLabel jlPregunta;
     private javax.swing.JRadioButton jrbNo;
     private javax.swing.JRadioButton jrbSi;
+
+
     // End of variables declaration//GEN-END:variables
 }

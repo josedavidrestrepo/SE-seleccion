@@ -23,7 +23,7 @@ public class MotorController{
             motor = new Rete();
             
             motor.reset();
-            motor.batch("clips/zoo-grafico.clp");
+            motor.batch("clips/arbol.clp");
         } catch (JessException ex) {
             Logger.getLogger(MotorController.class.getName()).log(Level.SEVERE, null, ex);
         }

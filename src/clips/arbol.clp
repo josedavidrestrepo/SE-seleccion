@@ -5,19 +5,14 @@
 	(slot respuesta)
 	(slot nodo-si)
 	(slot nodo-no)
+	(slot ayuda)
 )
-(defrule start
-	(declare (salience 1))
-	=>
-	(printout t "** Bienvenido a identifica tu animal **" crlf)
-)
-
 
 (defrule inicio
-	(not (Nodo (nombre nodo-0)))
+	(not (Nodo (nombre nodo-lengua)))
 	=>
-	(load-facts "com/sistemas/clips/file.dat")
-	(assert (nodo-actual nodo-0))
+	(load-facts "clips/nodos.dat")
+	(assert (nodo-actual nodo-lengua))
 )
 
 ; preguntamos y almacenamos la respuesta ..
@@ -27,8 +22,6 @@
 	(not (respuesta ?))
 	=>
 	(printout t ?pregunta " : ")
-	(bind ?respuesta (read))
-	(assert (respuesta ?respuesta))
 )
 
 (defrule respuesta-incorrecta
@@ -62,6 +55,7 @@
 	?nodo-actual <- (nodo-actual ?nombre-actual)
 	(Nodo (tipo respuesta) (nombre ?nombre-actual) (respuesta ?respuesta))
 	=>
+	(assert (respuesta-final ?respuesta))
 	(printout t ?respuesta crlf )
 	(retract  ?nodo-actual)
 	(assert (ir-a-la-raiz-preguntar))
@@ -73,8 +67,6 @@
 	(not (respuesta))
 	=>
 	(printout t "Desea continuar la busqueda? (si/no): ")
-	(bind ?resp (read))
-	(assert (respuesta ?resp))
 )
 
 (defrule una-vez-mas
@@ -82,8 +74,7 @@
 	?resp <- (respuesta si)
 	=>
 	(retract ?ir ?resp)
-	(assert (nodo-actual nodo-0))
-
+	(assert (nodo-actual nodo-lengua))
 )
 
 (defrule no-mas

@@ -5,20 +5,20 @@
  */
 package controllers;
 
-import views.ZooView;
+import views.MainView;
 
 /**
  *
  * @author Alex
  */
-public class ZooController {
+public class MainController {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        ZooView zooView = new ZooView();
+        MainView zooView = new MainView();
         MotorController motorController = new MotorController();        
         EventHandler eventController = new EventHandler(zooView);
         

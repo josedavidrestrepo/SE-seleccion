@@ -6,7 +6,7 @@
 package controllers;
 
 import utils.Helper;
-import views.ZooView;
+import views.MainView;
 import jess.*;
 
 /**
@@ -15,8 +15,8 @@ import jess.*;
  */
 public class EventHandler implements JessListener{
 
-    ZooView vista;
-    public EventHandler(ZooView vista) {
+    MainView vista;
+    public EventHandler(MainView vista) {
         this.vista = vista;
     }
 
@@ -40,7 +40,9 @@ public class EventHandler implements JessListener{
                         String tipo = nodo.getSlotValue("tipo").stringValue(context);
                         if (tipo.equals("pregunta")){
                             String pregunta = nodo.getSlotValue("pregunta").stringValue(context);
+                            String ayuda = nodo.getSlotValue("ayuda").stringValue(context);
                             vista.cambiarPregunta(pregunta);
+                            vista.cambiarAyuda(ayuda);
                         }else if(tipo.equals("respuesta")){
                             String respuesta = nodo.getSlotValue("respuesta").stringValue(context);
                             vista.darRespuesta("El animal es: "+respuesta);
