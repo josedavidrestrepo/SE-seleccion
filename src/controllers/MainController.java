@@ -7,10 +7,6 @@ package controllers;
 
 import views.MainView;
 
-/**
- *
- * @author Alex
- */
 public class MainController {
 
     /**

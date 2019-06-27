@@ -9,10 +9,6 @@ import utils.Helper;
 import views.MainView;
 import jess.*;
 
-/**
- *
- * @author Alex
- */
 public class EventHandler implements JessListener{
 
     MainView vista;
@@ -45,7 +41,12 @@ public class EventHandler implements JessListener{
                             vista.cambiarAyuda(ayuda);
                         }else if(tipo.equals("respuesta")){
                             String respuesta = nodo.getSlotValue("respuesta").stringValue(context);
-                            vista.darRespuesta("El animal es: "+respuesta);
+                            if (respuesta.equals("Ninguno")){
+                                vista.darRespuesta("No es apto para ningún cargo disponible actualmente");
+                            }
+                            else {
+                                vista.darRespuesta("Usted es apto para el cargo:  "+ respuesta);
+                            }
                         }
                     }
                 } catch (JessException e) {

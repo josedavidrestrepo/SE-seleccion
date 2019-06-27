@@ -11,10 +11,6 @@ import jess.JessEvent;
 import jess.JessException;
 import jess.Rete;
 
-/**
- *
- * @author Alex
- */
 public class MotorController{
     Rete motor;
 
