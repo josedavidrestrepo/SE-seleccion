@@ -1,0 +1,7 @@
+(Nodo (nombre nodo-0) (tipo pregunta) (pregunta "¿El animal es de sangre fria si/no?") (respuesta nil) (nodo-si nodo-1) (nodo-no nodo-2))
+(Nodo (nombre nodo-1) (tipo respuesta) (pregunta nil) (respuesta "cocodrilo") (nodo-si nil) (nodo-no nil))
+(Nodo (nombre nodo-2) (tipo pregunta) (pregunta "¿El animal ladra si/no?") (respuesta nil) (nodo-si nodo-3) (nodo-no nodo-4))
+(Nodo (nombre nodo-3) (tipo respuesta) (pregunta nil) (respuesta "perro") (nodo-si nil) (nodo-no nil))
+(Nodo (nombre nodo-4) (tipo pregunta) (pregunta "¿El animal vuela si/no?") (respuesta nil) (nodo-si nodo-5) (nodo-no nodo-6))
+(Nodo (nombre nodo-5) (tipo respuesta) (pregunta nil) (respuesta "chancho") (nodo-si nil) (nodo-no nil))
+(Nodo (nombre nodo-6) (tipo respuesta) (pregunta nil) (respuesta "caballo") (nodo-si nil) (nodo-no nil))
