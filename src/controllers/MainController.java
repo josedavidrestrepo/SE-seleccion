@@ -14,11 +14,11 @@ public class MainController {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        MainView zooView = new MainView();
+        MainView mainView = new MainView();
         MotorController motorController = new MotorController();        
-        EventHandler eventController = new EventHandler(zooView);
+        EventHandler eventController = new EventHandler(mainView);
         
-        zooView.setMotorController(motorController);
+        mainView.setMotorController(motorController);
         
         motorController.addEscuchador(eventController);
         
